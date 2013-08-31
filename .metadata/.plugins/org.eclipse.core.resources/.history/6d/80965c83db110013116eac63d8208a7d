@@ -1,0 +1,8 @@
+package view;
+
+public class Main {
+	
+	public void main (char* argv[], int argc) {
+		System.out.println("Hello world!");
+	}
+}

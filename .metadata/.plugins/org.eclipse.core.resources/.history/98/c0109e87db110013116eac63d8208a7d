@@ -1,0 +1,10 @@
+package view;
+
+public class Main {
+	
+	public int main (char* argv[], int argc) {
+		System.out.println("Hello world!");
+		
+		return 0;
+	}
+}

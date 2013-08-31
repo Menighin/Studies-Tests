@@ -1,0 +1,8 @@
+package view;
+
+public class Main {
+	
+	public void main () {
+		println ("Hello world!");
+	}
+}

@@ -1,0 +1,32 @@
+package view;
+
+import java.util.Scanner;
+import model.Person;
+
+public class Main {
+	
+	
+	public static void main (String args[]) {
+		int i, j, op = 0;
+		Person p;
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+			printMenu();
+			op = sc.nextInt();
+		} while (op != 4);
+		
+		sc.close();
+	}
+	
+	public static void printMenu() {
+		System.out.println("------------- MENU -------------");
+		System.out.println("(1) Insert person");
+		System.out.println("(2) Search person");
+		System.out.println("(3) List all agenda");
+		System.out.println("(4) Exit");
+		System.out.println();
+	}
+	
+	
+}

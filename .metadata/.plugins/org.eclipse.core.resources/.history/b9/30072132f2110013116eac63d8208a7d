@@ -1,0 +1,27 @@
+package controller;
+
+import java.util.ArrayList;
+import model.Person;
+
+public class PersonController {
+	
+	public void Connect() throws Exception {
+		Person.Connect();
+	}
+	
+	public void insertAgenda (Person p) throws Exception {
+		Person.insertAgenda(p);
+	}
+	
+	public ArrayList<Person> searchAgenda (String name) {
+		return Person.searchAgenda(name);
+	}
+	
+	public ArrayList<Person> listAll() {
+		return Person.returnAgenda();
+	}
+	
+	public void Disconnect() throws Exception {
+		Person.Disconnect();
+	}
+}

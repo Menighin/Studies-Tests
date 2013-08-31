@@ -1,5 +1,6 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import model.Person;
 import controller.PersonController;
@@ -13,6 +14,13 @@ public class Main {
 		Person p;
 		Scanner sc = new Scanner(System.in);
 		String name;
+		ArrayList<Person> result = new ArrayList<Person>();
+		
+		try {
+			pc.Connect();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		do {
 			printMenu();
@@ -31,29 +39,74 @@ public class Main {
 					System.out.print("Email: ");
 					p.setEmail(sc.nextLine());
 					
-					pc.insertAgenda(p);
+					try {
+						pc.insertAgenda(p);
+					} catch (Exception e) {
+						System.out.println(e.getMessage());
+						break;
+					}
+					
+					System.out.println("Person inserted successfully!");
+					
 					break;
 				case 2:
 					sc.nextLine();
-					System.out.println("Name to search: ");
+					System.out.print("Name to search: ");
 					name = sc.nextLine();
 					
-					for (Person temp : pc.searchAgenda(name)) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
+					try {
+						result = pc.searchAgenda(name);
+					} catch (Exception e) {
+						result = new ArrayList<Person>();
+						System.out.println(e.getMessage());
 					}
+					
+					for (Person temp : result) {
+						System.out.println("##########################\n");
+						System.out.println(temp.toString());
+						System.out.println();
+					}
+					
+					if (result.isEmpty()) {
+						System.out.println("##########################");
+						System.out.println("There is nobody called " + name + " on your agenda!");
+						System.out.println();
+					}
+					
 					break;
 				case 3:
-					for (Person temp : pc.listAll()) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
+						
+					try {
+						result = pc.listAll();
+					} catch (Exception e) {
+						result = new ArrayList<Person>();
+						System.out.println(e.getMessage());
 					}
+					
+					for (Person temp : result) {
+						System.out.println("##########################\n");
+						System.out.println(temp.toString());
+						System.out.println();
+					}
+					
+					if (result.isEmpty()) {
+						System.out.println("##########################");
+						System.out.println("Your agenda is empty!");
+						System.out.println();
+					}
+					
 					break;
 			}
 			
 		} while (op != 4);
 		
 		sc.close();
+		
+		try {
+			pc.Disconnect();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public static void printMenu() {

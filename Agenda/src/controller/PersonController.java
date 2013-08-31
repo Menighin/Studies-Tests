@@ -5,15 +5,23 @@ import model.Person;
 
 public class PersonController {
 	
-	public void insertAgenda (Person p) {
+	public void Connect() throws Exception {
+		Person.Connect();
+	}
+	
+	public void insertAgenda (Person p) throws Exception {
 		Person.insertAgenda(p);
 	}
 	
-	public ArrayList<Person> searchAgenda (String name) {
+	public ArrayList<Person> searchAgenda (String name) throws Exception {
 		return Person.searchAgenda(name);
 	}
 	
-	public ArrayList<Person> listAll() {
+	public ArrayList<Person> listAll() throws Exception {
 		return Person.returnAgenda();
+	}
+	
+	public void Disconnect() throws Exception {
+		Person.Disconnect();
 	}
 }

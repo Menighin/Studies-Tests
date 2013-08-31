@@ -1,0 +1,57 @@
+package controller;
+
+public class Person {
+	
+	private int id;
+	private String name;
+	private String tel;
+	private String email;
+	
+	public int getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getTel() {
+		return tel;
+	}
+	
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + name + "\nTel: " + tel + "\nE-mail: " + email + "\n";
+	}
+	
+	public void insertAgenda (Person p) {
+		//TODO implement function that persists Person on database
+	}
+	
+	public Person searchAgenda (String name) {
+		Person p = new Person();
+		
+		//TODO implement search for name in database
+		
+		return p;
+	}
+	
+	public void deleteAgenda (String name)
+	
+}

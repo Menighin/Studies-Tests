@@ -39,15 +39,11 @@ public class Main {
 					name = sc.nextLine();
 					
 					for (Person temp : pc.searchAgenda(name)) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
+						
 					}
 					break;
 				case 3:
-					for (Person temp : pc.listAll()) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
-					}
+					//TODO call controller method that returns all Person;
 					break;
 			}
 			

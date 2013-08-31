@@ -31,23 +31,17 @@ public class Main {
 					System.out.print("Email: ");
 					p.setEmail(sc.nextLine());
 					
-					pc.insertAgenda(p);
+					//TODO call controller method to insert
 					break;
 				case 2:
 					sc.nextLine();
 					System.out.println("Name to search: ");
 					name = sc.nextLine();
 					
-					for (Person temp : pc.searchAgenda(name)) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
-					}
+					//TODO call controller method that search for name;
 					break;
 				case 3:
-					for (Person temp : pc.listAll()) {
-						System.out.println(temp.toString());
-						System.out.println("##########################");
-					}
+					//TODO call controller method that returns all Person;
 					break;
 			}
 			

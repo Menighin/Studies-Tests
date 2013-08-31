@@ -1,0 +1,16 @@
+package controller;
+
+import java.util.ArrayList;
+import model.Person;
+
+public class PersonController {
+	
+	public void insertAgenda (Person p) {
+		p.insertAgenda();
+	}
+	
+	public ArrayList<Person> listAll() {
+		return Person.returnAgenda();
+	}
+	
+}

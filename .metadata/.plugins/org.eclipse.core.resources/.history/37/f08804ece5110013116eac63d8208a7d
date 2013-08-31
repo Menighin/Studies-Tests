@@ -52,7 +52,7 @@ public class Person {
 		return "Nome: " + name + "\nTel: " + tel + "\nE-mail: " + email + "\n";
 	}
 	
-	public static void insertAgenda (Person p) {
+	public void insertAgenda () {
 		//TODO implement method that persists Person on database
 	}
 	

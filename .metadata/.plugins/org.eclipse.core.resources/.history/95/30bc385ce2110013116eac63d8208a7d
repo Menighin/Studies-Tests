@@ -1,0 +1,9 @@
+package controller;
+
+import model.Person;
+
+public class PersonController {
+	
+	public void insertAgenda (Person p)
+	
+}

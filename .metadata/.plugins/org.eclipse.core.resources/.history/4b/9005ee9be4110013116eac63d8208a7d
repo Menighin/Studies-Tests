@@ -52,11 +52,11 @@ public class Person {
 		return "Nome: " + name + "\nTel: " + tel + "\nE-mail: " + email + "\n";
 	}
 	
-	public static void insertAgenda (Person p) {
+	public void insertAgenda () {
 		//TODO implement method that persists Person on database
 	}
 	
-	public static ArrayList<Person> searchAgenda (String name) {
+	public ArrayList<Person> searchAgenda (String name) {
 		ArrayList<Person> ap = new ArrayList<Person>();
 		
 		//TODO implement search for name in database

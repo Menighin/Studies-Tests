@@ -10,6 +10,7 @@ public class Person {
 	private String email;
 	
 	public Person (Person p) {
+		this.id = p.getId();
 		this.name = p.getName();
 		this.tel = p.getTel();
 		this.email =p.getEmail();
@@ -52,11 +53,11 @@ public class Person {
 		return "Nome: " + name + "\nTel: " + tel + "\nE-mail: " + email + "\n";
 	}
 	
-	public static void insertAgenda (Person p) {
+	public void insertAgenda () {
 		//TODO implement method that persists Person on database
 	}
 	
-	public static ArrayList<Person> searchAgenda (String name) {
+	public ArrayList<Person> searchAgenda (String name) {
 		ArrayList<Person> ap = new ArrayList<Person>();
 		
 		//TODO implement search for name in database
@@ -64,12 +65,8 @@ public class Person {
 		return ap;
 	}
 	
-	public static ArrayList<Person> returnAgenda () {
-		ArrayList<Person> ap = new ArrayList<Person>();
-		
-		//TODO return the whole agenda
-		
-		return ap;
+	public void returnAgenda () {
+		//TODO implement method that delets Person with ID = id from database
 	}
 	
 }

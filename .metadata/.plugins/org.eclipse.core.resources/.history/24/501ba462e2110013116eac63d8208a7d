@@ -5,23 +5,37 @@ import java.util.ArrayList;
 
 public class Person {
 	
+	private int id;
 	private String name;
 	private String tel;
 	private String email;
 	
 	public Person (Person p) {
+		this.id = p.getId();
 		this.name = p.getName();
 		this.tel = p.getTel();
 		this.email =p.getEmail();
 	}
 	
+	public Person(int id, String name, String tel, String email) {
+		this.id = id;
+		this.name = name;
+		this.tel = tel;
+		this.email = email;
+	}
+	
 	public Person(String name, String tel, String email) {
+		this.id = 0;
 		this.name = name;
 		this.tel = tel;
 		this.email = email;
 	}
 	
 	public Person () {}
+	
+	public int getId() {
+		return id;
+	}
 	
 	public String getName() {
 		return name;
@@ -52,11 +66,11 @@ public class Person {
 		return "Nome: " + name + "\nTel: " + tel + "\nE-mail: " + email + "\n";
 	}
 	
-	public static void insertAgenda (Person p) {
+	public void insertAgenda (Person p) {
 		//TODO implement method that persists Person on database
 	}
 	
-	public static ArrayList<Person> searchAgenda (String name) {
+	public ArrayList<Person> searchAgenda (String name) {
 		ArrayList<Person> ap = new ArrayList<Person>();
 		
 		//TODO implement search for name in database
@@ -64,12 +78,8 @@ public class Person {
 		return ap;
 	}
 	
-	public static ArrayList<Person> returnAgenda () {
-		ArrayList<Person> ap = new ArrayList<Person>();
-		
-		//TODO return the whole agenda
-		
-		return ap;
+	public void deleteAgenda (int id) {
+		//TODO implement method that delets Person with ID = id from database
 	}
 	
 }
